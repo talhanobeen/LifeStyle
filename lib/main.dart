@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:lifestyle/Travel/locator.dart';
@@ -47,7 +49,8 @@ void url_launcher(String Url) async {
 }
 DatabaseReference usersRef=FirebaseDatabase.instance.reference().child("users");
 class MyApp extends StatelessWidget {
-
+  static FlutterLocalNotificationsPlugin notifications =
+  FlutterLocalNotificationsPlugin();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -86,6 +89,23 @@ class MyApp extends StatelessWidget {
       },
     )
 
+    );
+  }
+  void _initializeLocalNotificationsPlugin(BuildContext context) {
+    var settingsAndroid = AndroidInitializationSettings('ic_stat_alarm');
+    var settingsIOS = IOSInitializationSettings();
+    notifications.initialize(
+      InitializationSettings(android:settingsAndroid, iOS:settingsIOS),
+      onSelectNotification: (payload) {
+        _onSelectNotification(context, payload);
+      },
+    );
+  }
+
+  Future _onSelectNotification(BuildContext context, String payload) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyApp()),
     );
   }
 }

@@ -14,6 +14,8 @@ dependencies:
     sdk: flutter
   intl: ^0.16.1
   url_launcher: ^5.7.10
+  screenshot: ^0.2.0
+  toast: ^0.1.5
   fluttertoast: ^7.1.8
   cupertino_icons: ^1.0.0
   rxdart: ^0.26.0
@@ -55,6 +57,9 @@ dependencies:
   get_it: ^6.0.0
   path: ^1.7.0
   path_provider: ^2.0.1
+  timeago: ^2.0.8
+  material_design_icons_flutter: ^3.0.39
+  canonical_url: ^1.0.4
   table_calendar: ^2.3.3
   progress_hud: ^1.1.0
   horizontal_picker: ^1.0.0
@@ -90,6 +95,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/plane_bg.jpg
+    - img/offline.jpg
     - assets/plane.jpg
     - assets/loading_bg.jpg
     - assets/splash_bg.jpg

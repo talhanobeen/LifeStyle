@@ -104,8 +104,21 @@ class _loginClassState extends State<loginClass> {
       funResetPassword:
           (BuildContext _context, Function isRequest, String email) {
         isRequest(true);
+        Fluttertoast.showToast(
+            msg: "Password Reset Email has been sent.",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => loginClass()),
+        );
+        Future.delayed(Duration(seconds: 2), () async {
 
-        Future.delayed(Duration(seconds: 2), () {
           print('-------------- function call----------------');
           print(email);
           print('--------------   end call   ----------------');

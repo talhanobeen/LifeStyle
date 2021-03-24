@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -5,7 +6,7 @@ import 'package:lifestyle/Reminder/MedicalReminder/MedicineMain.dart';
 import 'package:lifestyle/settings.dart';
 import 'package:lifestyle/mainHome.dart';
 import 'package:lifestyle/userAccount.dart';
-
+import 'package:lifestyle/BirthdayReminder/home.dart';
 import 'WaterReminder/screens/data_entry_screen.dart';
 
 class reminders extends StatefulWidget {
@@ -125,7 +126,12 @@ class remindersState extends State<reminders> {
                 color: Colors.red,
                 margin: EdgeInsets.all(15.0),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MyHomePage()));
+                  },
                   splashColor: Colors.white,
                   child: Center(
                     child: Column(

@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:lifestyle/Motivation/MainPage.dart';
 import 'package:lifestyle/Shoping/Home.dart';
 import 'package:lifestyle/Travel/widget/home_screen.dart';
 import 'package:lifestyle/financeHome.dart';
@@ -500,7 +501,7 @@ class mainHomeState extends State<mainHome> {
    else if(tag=="Motivational")
    {
      Navigator.push(context,
-         MaterialPageRoute(builder: (context) => motivation()));
+         MaterialPageRoute(builder: (context) => MainPage()));
    }
  }
   _buildStoryPage(String tag, bool active) {

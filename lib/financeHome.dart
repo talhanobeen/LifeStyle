@@ -167,7 +167,7 @@ class financeHomePage extends State<financeHome> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => setBudget()));
+                      MaterialPageRoute(builder: (context) => addBudget()));
                 },
                 splashColor: Colors.white,
                 child: Center(
